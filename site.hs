@@ -6,7 +6,7 @@ import           Hakyll
 
 --------------------------------------------------------------------------------
 hakyllConf :: Configuration
-hakyllConf = defaultConfiguration { deployCommand = "bash /home/brian/Programs/blog/deploy.sh" }
+hakyllConf = defaultConfiguration { deployCommand = "bash $(pwd)/deploy.sh" }
 
 main :: IO ()
 main = hakyllWith hakyllConf $ do

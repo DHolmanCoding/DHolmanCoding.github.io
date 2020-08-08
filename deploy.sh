@@ -16,18 +16,18 @@ cd "${DEPLOY}" || exit
 echo "Initializing git..."
 git init -q
 git checkout --orphan master -q
-git remote add origin $REMOTE
+git remote add origin ${REMOTE}
 cd "../"
 
 echo "Building site..."
 ./site build >/dev/null
-cp -r $SITE/* $DEPLOY
-cp -r deployAssets/* $DEPLOY
+cp -r ${SITE}/* ${DEPLOY}
+cp -r deployAssets/* ${DEPLOY}
 cd "${DEPLOY}" || exit
 
 echo "Pushing site to git..."
 git add --all
-git commit -m "generated from $SHA"
-git push origin master --force -q
+git commit -m "generated from ${SHA}"
+git push origin master
 
 echo "Finished deploying!"
