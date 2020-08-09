@@ -85,7 +85,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 26px;
+    font-size: 22px;
 }
 
 h2 {
@@ -96,12 +96,8 @@ h3 {
     font-size: 18px;
 }
 
-ul {
-    list-style-image: url("../images/list-style-image.png");
-}
-
 blockquote {
-    background: #e6e6e6 url("../images/quote-background.png") no-repeat left top;
+    background: #e6e6e6;
     font-style: italic;
     margin-left: 18px;
     padding: 6px 6px 6px 54px;
@@ -174,9 +170,11 @@ img.contactpic {
 p.tags {
   font-size: 80%;
 }
+
 table {
   border-collapse: collapse;
 }
+
 tbody>tr>td, tbody>tr>th, tfoot>tr>td, tfoot>tr>th, thead>tr>td, thead>tr>th {
   border: 1px solid #ddd;
   padding: 6px;

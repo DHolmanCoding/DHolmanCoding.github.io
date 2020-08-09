@@ -32,4 +32,16 @@ div#lightbox{
     background-color:#000;
     height:100%
 }@media all and (min-width:822px){
-    div#navigation{float:left;left:0px;position:fixed;top:0px;width:170px;height:100%;padding:0 20px 0 20px;margin:0}div#navigation h1, div#navigation > a{display:block;text-align:right}div#navigation > div > a > i.fa{font-size:1.5em}div#navigation > div{margin-top:10px;text-align:right}div#navigation a{margin:6px 0px 6px 0px}div#content{margin:20px 0px 0px 206px;padding:0px 36px 0px 36px;width:900px}div#lightbox{margin:0px 0px 0px 155px}}
+    div#navigation{
+        float:left;left:0px;position:fixed;top:0px;width:170px;height:100%;padding:0 20px 0 20px;margin:0
+    }
+
+    div#navigation h1,
+    div#navigation > a{display:block;text-align:right}
+    div#navigation > div > a > i.fa{font-size:1.5em}
+    div#navigation > div{margin-top:10px;text-align:right}
+    div#navigation a{margin:6px 0px 6px 0px}
+    div#content{margin:20px 0px 0px 206px;padding:0px 36px 0px 36px;width:650px}
+
+    div#lightbox{margin:0px 0px 0px 155px}
+}
