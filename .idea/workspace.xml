@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5fd13c24-7f91-4058-9ac3-96dd35a9f88d" name="Default Changelist" comment="dev: looks good enough for today, fully functional homepage up and running" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="JupyterTrust" id="2f390c68-9c7d-4853-91d7-42695010d0c2" />
+  <component name="ProjectId" id="1fpuWYu7f4f4Kot5W28lX0Va4kC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fonts" />
+      <recent name="$PROJECT_DIR$/css" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5fd13c24-7f91-4058-9ac3-96dd35a9f88d" name="Default Changelist" comment="" />
+      <created>1596927387458</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596927387458</updated>
+      <workItem from="1596927388511" duration="349000" />
+      <workItem from="1596927745927" duration="862000" />
+      <workItem from="1596928617628" duration="622000" />
+      <workItem from="1596929248224" duration="7470000" />
+    </task>
+    <task id="LOCAL-00001" summary="chore: adds boilerplate using https://github.com/bgapinski/blog :-)">
+      <created>1596927602268</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596927602268</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactor: personalizing the boilerplate">
+      <created>1596928051402</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596928051402</updated>
+    </task>
+    <task id="LOCAL-00003" summary="chore: adds deploy dir">
+      <created>1596928169015</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596928169015</updated>
+    </task>
+    <task id="LOCAL-00004" summary="dev: more customization, trying to unbreak the site">
+      <created>1596928825527</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1596928825527</updated>
+    </task>
+    <task id="LOCAL-00005" summary="dev: forking from https://github.com/cattheory/blog to get a website down">
+      <created>1596929065033</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1596929065033</updated>
+    </task>
+    <task id="LOCAL-00006" summary="docs: updates README.md">
+      <created>1596929519782</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1596929519782</updated>
+    </task>
+    <task id="LOCAL-00007" summary="dev: setting up Hello, World!">
+      <created>1596929530774</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596929530774</updated>
+    </task>
+    <task id="LOCAL-00008" summary="dev: adds HTTPS link to my website for easy clicky">
+      <created>1596929562620</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596929562620</updated>
+    </task>
+    <task id="LOCAL-00009" summary="dev: setting up hello world index">
+      <created>1596929759351</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1596929759351</updated>
+    </task>
+    <task id="LOCAL-00010" summary="dev: trying out some js blog boilerplate with a submnodule">
+      <created>1596930942141</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1596930942141</updated>
+    </task>
+    <task id="LOCAL-00011" summary="dev: Basic website release">
+      <created>1596933392395</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1596933392395</updated>
+    </task>
+    <task id="LOCAL-00012" summary="dev: fixing the aesthetics">
+      <created>1596933988524</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1596933988524</updated>
+    </task>
+    <task id="LOCAL-00013" summary="style: adding some random fonts from the internet">
+      <created>1596934830321</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1596934830321</updated>
+    </task>
+    <task id="LOCAL-00014" summary="dev: looks good enough for today, fully functional homepage up and running">
+      <created>1596935772108</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1596935772108</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: adds boilerplate using https://github.com/bgapinski/blog :-)" />
+    <MESSAGE value="refactor: personalizing the boilerplate" />
+    <MESSAGE value="chore: adds deploy dir" />
+    <MESSAGE value="dev: more customization, trying to unbreak the site" />
+    <MESSAGE value="dev: forking from https://github.com/cattheory/blog to get a website down" />
+    <MESSAGE value="docs: updates README.md" />
+    <MESSAGE value="dev: setting up Hello, World!" />
+    <MESSAGE value="dev: adds HTTPS link to my website for easy clicky" />
+    <MESSAGE value="dev: setting up hello world index" />
+    <MESSAGE value="dev: trying out some js blog boilerplate with a submnodule" />
+    <MESSAGE value="dev: Basic website release" />
+    <MESSAGE value="dev: fixing the aesthetics" />
+    <MESSAGE value="style: adding some random fonts from the internet" />
+    <MESSAGE value="dev: looks good enough for today, fully functional homepage up and running" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev: looks good enough for today, fully functional homepage up and running" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="603" y="535" width="582" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596929491339">
+      <screen x="72" y="27" width="3368" height="1413" />
+    </state>
+    <state x="603" y="535" width="582" height="403" key="#com.intellij.fileTypes.FileTypeChooser/72.27.3368.1413@72.27.3368.1413" timestamp="1596929491339" />
+    <state x="632" y="482" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596930157950">
+      <screen x="72" y="27" width="3368" height="1413" />
+    </state>
+    <state x="632" y="482" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.27.3368.1413@72.27.3368.1413" timestamp="1596930157950" />
+    <state x="398" y="368" width="1022" height="737" key="SettingsEditor" timestamp="1596928605927">
+      <screen x="72" y="27" width="3368" height="1413" />
+    </state>
+    <state x="398" y="368" width="1022" height="737" key="SettingsEditor/72.27.3368.1413@72.27.3368.1413" timestamp="1596928605927" />
+    <state x="504" y="469" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1596935773961">
+      <screen x="72" y="27" width="3368" height="1413" />
+    </state>
+    <state x="504" y="469" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.3368.1413@72.27.3368.1413" timestamp="1596935773961" />
+  </component>
+</project>
