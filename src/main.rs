@@ -1,38 +1,33 @@
 use leptos::prelude::*;
+use leptos_router::components::{A, Route, Router, Routes};
+use leptos_router::path;
 use pulldown_cmark::{Event, HeadingLevel, Parser, Tag, TagEnd};
 
 fn main() {
     mount_to_body(App);
 }
 
-fn get_current_page() -> String {
-    let window = web_sys::window().unwrap();
-    let document = window.document().unwrap();
-    let body = document.body().unwrap();
-    let page = body.get_attribute("data-page").unwrap_or_default();
-    page
-}
-
 #[component]
 fn App() -> impl IntoView {
     let (dark_mode, set_dark_mode) = signal(false);
-    let current_page = get_current_page();
 
     view! {
-        <div class="page-wrapper" class:dark=dark_mode>
-            <div class="page-border">
-                <div class="container">
-                    <Header dark_mode=dark_mode set_dark_mode=set_dark_mode/>
-                    {match current_page.as_str() {
-                        "blog" => view! { <BlogPage/> }.into_any(),
-                        "quotes" => view! { <QuotesPage/> }.into_any(),
-                        "post-building-this-site" => view! { <PostBuildingThisSite/> }.into_any(),
-                        _ => view! { <HomePage/> }.into_any(),
-                    }}
-                    <Footer/>
+        <Router>
+            <div class="page-wrapper" class:dark=dark_mode>
+                <div class="page-border">
+                    <div class="container">
+                        <Header dark_mode=dark_mode set_dark_mode=set_dark_mode/>
+                        <Routes fallback=|| view! { <HomePage/> }>
+                            <Route path=path!("/") view=HomePage/>
+                            <Route path=path!("/blog") view=BlogPage/>
+                            <Route path=path!("/blog/building-this-site") view=PostBuildingThisSite/>
+                            <Route path=path!("/quotes") view=QuotesPage/>
+                        </Routes>
+                        <Footer/>
+                    </div>
                 </div>
             </div>
-        </div>
+        </Router>
     }
 }
 
@@ -55,7 +50,7 @@ fn BlogPage() -> impl IntoView {
         <main class="page-content">
             <h1>"Blog"</h1>
             <div class="blog-list">
-                <BlogPost title="Building This Site with Rust and Leptos" date="Nov 26, 2025" href="/blog-building-this-site"/>
+                <BlogPost title="Building This Site with Rust and Leptos" date="Nov 26, 2025" href="/blog/building-this-site"/>
             </div>
         </main>
     }
@@ -236,8 +231,8 @@ fn Header(dark_mode: ReadSignal<bool>, set_dark_mode: WriteSignal<bool>) -> impl
                     </svg>
                 </a>
                 <div class="nav-sections">
-                    <a href="/blog.html">"Blog"</a>
-                    <a href="/quotes.html">"Quotes"</a>
+                    <A href="/blog">"Blog"</A>
+                    <A href="/quotes">"Quotes"</A>
                 </div>
                 <button class="theme-toggle" on:click=toggle_theme>
                     {move || if dark_mode.get() { "☀️" } else { "🌙" }}

@@ -1,20 +1,13 @@
 #!/bin/bash
-# Build script for multi-page Trunk site
+# Build script for SPA with client-side routing
 
 set -e
 
-# Build other pages first (they overwrite dist/index.html, so we rename them)
-for page in blog.html quotes.html blog-building-this-site.html; do
-    if [ -f "$page" ]; then
-        echo "Building $page..."
-        trunk build "$page" --release
-        mv dist/index.html "dist/$page"
-    fi
-done
-
-# Build main index.html last so it stays as dist/index.html
-echo "Building index.html..."
+echo "Building site..."
 trunk build --release
+
+# Copy index.html to 404.html for GitHub Pages SPA routing
+cp dist/index.html dist/404.html
 
 echo "Build complete! Output in dist/"
 
