@@ -25,12 +25,14 @@ jobs:
 
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
 
-      - name: Add wasm target
-        run: rustup target add wasm32-unknown-unknown
+      - name: Cache Rust
+        uses: Swatinem/rust-cache@v2
 
       - name: Install Trunk
-        run: cargo install trunk
+        uses: jetli/trunk-action@v0.5.1
 
       - name: Build all pages
         run: bash build.sh
