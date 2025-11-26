@@ -1,0 +1,10 @@
+[build]
+dist = "dist"
+
+[serve]
+port = 8080
+open = true
+
+[watch]
+watch = ["src", "style.css", "index.html"]
+

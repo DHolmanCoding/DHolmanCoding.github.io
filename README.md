@@ -1,4 +1,17 @@
-# Personal Website Development
-https://DHolmanCoding.github.io
+# Douglas Holman - Personal Site
 
-https://jaspervdj.be/hakyll/examples.html
+Built with [Leptos](https://leptos.dev/) (Rust + WASM).
+
+## Development
+
+```bash
+trunk serve
+```
+
+## Build for production
+
+```bash
+trunk build --release
+```
+
+Output goes to `dist/` — deploy this to GitHub Pages.
