@@ -1,4 +1,5 @@
 use leptos::prelude::*;
+use pulldown_cmark::{Event, HeadingLevel, Parser, Tag, TagEnd};
 
 fn main() {
     mount_to_body(App);
@@ -25,6 +26,7 @@ fn App() -> impl IntoView {
                     {match current_page.as_str() {
                         "blog" => view! { <BlogPage/> }.into_any(),
                         "quotes" => view! { <QuotesPage/> }.into_any(),
+                        "post-building-this-site" => view! { <PostBuildingThisSite/> }.into_any(),
                         _ => view! { <HomePage/> }.into_any(),
                     }}
                     <Footer/>
@@ -53,21 +55,155 @@ fn BlogPage() -> impl IntoView {
         <main class="page-content">
             <h1>"Blog"</h1>
             <div class="blog-list">
-                <BlogPost title="Why I Build with Rust" date="Nov 2025"/>
-                <BlogPost title="Lessons from Scaling ML at Flock Safety" date="Oct 2025"/>
-                <BlogPost title="The Full Stack ML Engineer" date="Sep 2025"/>
+                <BlogPost title="Building This Site with Rust and Leptos" date="Nov 26, 2025" href="/blog-building-this-site"/>
             </div>
         </main>
     }
 }
 
 #[component]
-fn BlogPost(title: &'static str, date: &'static str) -> impl IntoView {
+fn BlogPost(title: &'static str, date: &'static str, href: &'static str) -> impl IntoView {
     view! {
-        <div class="blog-post">
+        <a href=href class="blog-post">
             <span class="blog-title">{title}</span>
             <span class="blog-date">{date}</span>
-        </div>
+        </a>
+    }
+}
+
+fn slugify(text: &str) -> String {
+    text.to_lowercase()
+        .chars()
+        .map(|c| if c.is_alphanumeric() { c } else { '-' })
+        .collect::<String>()
+        .split('-')
+        .filter(|s| !s.is_empty())
+        .collect::<Vec<_>>()
+        .join("-")
+}
+
+struct TocEntry {
+    title: String,
+    slug: String,
+}
+
+fn extract_toc(markdown: &str) -> Vec<TocEntry> {
+    let parser = Parser::new(markdown);
+    let mut entries = Vec::new();
+    let mut in_h2 = false;
+    let mut current_text = String::new();
+
+    for event in parser {
+        match event {
+            Event::Start(Tag::Heading {
+                level: HeadingLevel::H2,
+                ..
+            }) => {
+                in_h2 = true;
+                current_text.clear();
+            }
+            Event::Text(text) if in_h2 => {
+                current_text.push_str(&text);
+            }
+            Event::End(TagEnd::Heading(HeadingLevel::H2)) => {
+                let slug = slugify(&current_text);
+                entries.push(TocEntry {
+                    title: current_text.clone(),
+                    slug,
+                });
+                in_h2 = false;
+            }
+            _ => {}
+        }
+    }
+    entries
+}
+
+fn render_markdown(markdown: &str) -> String {
+    let parser = Parser::new(markdown);
+    let mut html_output = String::new();
+    let mut in_heading = false;
+    let mut heading_level = HeadingLevel::H1;
+    let mut heading_text = String::new();
+
+    for event in parser {
+        match event {
+            Event::Start(Tag::Heading { level, .. }) => {
+                in_heading = true;
+                heading_level = level;
+                heading_text.clear();
+            }
+            Event::Text(ref text) if in_heading => {
+                heading_text.push_str(text);
+            }
+            Event::End(TagEnd::Heading(_)) => {
+                let slug = slugify(&heading_text);
+                let tag = match heading_level {
+                    HeadingLevel::H1 => "h1",
+                    HeadingLevel::H2 => "h2",
+                    HeadingLevel::H3 => "h3",
+                    HeadingLevel::H4 => "h4",
+                    HeadingLevel::H5 => "h5",
+                    HeadingLevel::H6 => "h6",
+                };
+                html_output.push_str(&format!(
+                    "<{} id=\"{}\">{}</{}>",
+                    tag, slug, heading_text, tag
+                ));
+                in_heading = false;
+            }
+            _ if in_heading => {}
+            _ => {
+                let mut tmp = String::new();
+                pulldown_cmark::html::push_html(&mut tmp, std::iter::once(event));
+                html_output.push_str(&tmp);
+            }
+        }
+    }
+    html_output
+}
+
+#[component]
+fn TableOfContents(entries: Vec<TocEntry>) -> impl IntoView {
+    view! {
+        <nav class="toc">
+            <h3>"Contents"</h3>
+            <ul>
+                {entries
+                    .into_iter()
+                    .map(|entry| {
+                        let href = format!("#{}", entry.slug);
+                        view! {
+                            <li>
+                                <a href=href>{entry.title}</a>
+                            </li>
+                        }
+                    })
+                    .collect::<Vec<_>>()}
+            </ul>
+        </nav>
+    }
+}
+
+#[component]
+fn Markdown(content: &'static str) -> impl IntoView {
+    let html = render_markdown(content);
+    view! { <div class="post-content" inner_html=html></div> }
+}
+
+#[component]
+fn PostBuildingThisSite() -> impl IntoView {
+    const CONTENT: &str = include_str!("../posts/building-this-site.md");
+    let toc = extract_toc(CONTENT);
+
+    view! {
+        <main class="page-content post">
+            <a href="/blog" class="back-link">"← Back to Blog"</a>
+            <article>
+                <Markdown content=CONTENT/>
+            </article>
+            <TableOfContents entries=toc/>
+        </main>
     }
 }
 
@@ -100,8 +236,8 @@ fn Header(dark_mode: ReadSignal<bool>, set_dark_mode: WriteSignal<bool>) -> impl
                     </svg>
                 </a>
                 <div class="nav-sections">
-                    <a href="/blog">"Blog"</a>
-                    <a href="/quotes">"Quotes"</a>
+                    <a href="/blog.html">"Blog"</a>
+                    <a href="/quotes.html">"Quotes"</a>
                 </div>
                 <button class="theme-toggle" on:click=toggle_theme>
                     {move || if dark_mode.get() { "☀️" } else { "🌙" }}

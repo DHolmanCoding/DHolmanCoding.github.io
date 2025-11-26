@@ -32,8 +32,8 @@ jobs:
       - name: Install Trunk
         run: cargo install trunk
 
-      - name: Build
-        run: trunk build --release
+      - name: Build all pages
+        run: ./build.sh
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
