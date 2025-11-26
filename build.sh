@@ -11,7 +11,7 @@ trunk build --release
 for page in blog.html quotes.html blog-building-this-site.html; do
     if [ -f "$page" ]; then
         echo "Building $page..."
-        trunk build --release "$page"
+        trunk build "$page" --release
     fi
 done
 
