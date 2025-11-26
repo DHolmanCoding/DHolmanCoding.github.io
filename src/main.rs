@@ -21,7 +21,6 @@ fn App() -> impl IntoView {
                             <Route path=path!("/") view=HomePage/>
                             <Route path=path!("/blog") view=BlogPage/>
                             <Route path=path!("/blog/building-this-site") view=PostBuildingThisSite/>
-                            <Route path=path!("/quotes") view=QuotesPage/>
                         </Routes>
                         <Footer/>
                     </div>
@@ -203,21 +202,6 @@ fn PostBuildingThisSite() -> impl IntoView {
 }
 
 #[component]
-fn QuotesPage() -> impl IntoView {
-    view! {
-        <main class="page-content">
-            <h1>"Quotes"</h1>
-            <div class="quotes-list">
-                <blockquote>
-                    <p>"Add your favorite quotes here."</p>
-                    <cite>"— Author"</cite>
-                </blockquote>
-            </div>
-        </main>
-    }
-}
-
-#[component]
 fn Header(dark_mode: ReadSignal<bool>, set_dark_mode: WriteSignal<bool>) -> impl IntoView {
     let toggle_theme = move |_| set_dark_mode.set(!dark_mode.get());
 
@@ -232,7 +216,6 @@ fn Header(dark_mode: ReadSignal<bool>, set_dark_mode: WriteSignal<bool>) -> impl
                 </a>
                 <div class="nav-sections">
                     <A href="/blog">"Blog"</A>
-                    <A href="/quotes">"Quotes"</A>
                 </div>
                 <button class="theme-toggle" on:click=toggle_theme>
                     {move || if dark_mode.get() { "☀️" } else { "🌙" }}
