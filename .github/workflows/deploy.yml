@@ -24,7 +24,7 @@ jobs:
           submodules: false  # Skip submodules
 
       - name: Setup Rust
-        uses: dtolnay/rust-action@stable
+        uses: dtolnay/rust-toolchain@stable
 
       - name: Add wasm target
         run: rustup target add wasm32-unknown-unknown
